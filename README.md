@@ -47,7 +47,6 @@ Utilisez express-generator pour initier votre tp
 ​
 ### STEP 2: Requêtes CRUD
 
-
 1. Créer un nouveau fichier dans le repertoire routes
 2. Déclarez votre nouvelle route dans le fichier app.js
 3. Dans votre nouveau fichier de route, créer les routes CRUD.
@@ -59,7 +58,7 @@ Utilisez express-generator pour initier votre tp
 ​
 1. Creer une clé API: http://bit.ly/2GOS5Tc
 ​
-2. Tester votre clé: http://www.omdbapi.com/?t=inception&apikey=VOTRECLEAPI
+2. Tester votre clé: http://www.omdbapi.com/?t=inception&apikey=c4e70256
 
 **Remplir la base de donnée avec des données supplémentaires**
 
@@ -96,3 +95,5 @@ Créer un site à l'aide de React qui n'aura qu'une seule fonctionnalité, affic
 - Parcourir cette liste pour 'render' des composants films
 ​
 Vous devrez faire fonctionner en même votre projet react et votre projet api dans deux consoles pour pouvoir interagir entre les deux.
+
+Grégoire Pateyron TD04
