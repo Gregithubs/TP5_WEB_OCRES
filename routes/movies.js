@@ -31,22 +31,23 @@ router.get('/:id', (req, res) => {
 
 /* PUT new movie. */
 router.put('/', (req, res) => {
-  // Get the data from request from request
-  const { movie } = req.body;
-  axios
-  .get('${http://www.omdbapi.com/?t=inception}?q=${Title}&appid=${c4e70256}')
-  .then(({ data }) => {
-    console.movies(data);})
-    movies = data;
-  // Create new unique id
-  const id = _.uniqueId();
-  // Insert it in array (normaly with connect the data with the database)
-  movies.push({ movie, id });
-  // Return message
-  res.json({
-    message: `Just added ${id}`,
-    movie: { movie, id }
-  });
+  axios.get('https://www.omdbapi.com/?t=${movie}$&apikey=31b98e24').then(function (response) {
+   
+    const {movie}=response.data['Title'];
+    const {yearOfRelease}=response.data['Year'];
+    const {duration}=response.data['Runtime'];
+    const {actors}=response.data['Runtime'];
+    const {poster}=response.data['Poster'];
+    const {boxOffice}=response.data['BoxOffice'];
+    const {rottenTomatoesScore}=response.data['Rotten Tomatoes'];
+    const id=_.uniqueId();
+    movies.push({id,movie,yearOfRelease,duration,actors,poster,boxOffice,rottenTomatoesScore});
+    res.json({
+      message:`just added ${id}`,
+      movie: {id,movie,yearOfRelease,duration,actors,poster,boxOffice,rottenTomatoesScore}
+    });
+  })
+ 
 });
 
 /* DELETE movie. */
